@@ -481,13 +481,14 @@
     /*========== Pricing ==========*/
     
     /*========== Portfolio ==========*/
-    .portfolio .portfolio-filter{
+    .portfolio .portfolio-filter {
       flex: 0 0 100%;
       max-width: 100%;
       text-align: center;
       margin-bottom: var(--m-2-5);
     }
-    .portfolio .portfolio-filter button{
+    
+    .portfolio .portfolio-filter button {
       border: none;
       background-color: transparent;
       font-weight: var(--font-semi-bold);
@@ -498,11 +499,13 @@
       transition: 0.3s;
       color: var(--color-dark);
     }
-    .portfolio .portfolio-filter button.active{
+    
+    .portfolio .portfolio-filter button.active {
       color: var(--color-primary);
       position: relative;
     }
-    .portfolio .portfolio-filter button.active::before{
+    
+    .portfolio .portfolio-filter button.active::before {
       content: '';
       position: absolute;
       left: 45%;
@@ -512,33 +515,39 @@
       background-color: var(--color-primary);
       border-radius: 50%;
     }
-    .portfolio-item{
+    
+    .portfolio-item {
       flex: 0 0 33.33%;
       max-width: 33.33%;
       margin-bottom: var(--m-1-5);
     }
-    .portfolio-item .hide{
+    
+    .portfolio-item.portfolio-hide {
       display: none;
     }
-    .portfolio-item .show{
+    
+    .portfolio-item .portfolio-show {
       display: block;
       animation: showItem 0.5s ease;
     }
+    
     @keyframes showItem {
-      0%{
+      0% {
         transform: scale(0.6);
         opacity: 0;
       }
-      100%{
+      100% {
         transform: scale(1);
         opacity: 1;
       }
     }
-    .portfolio-item-inner{
+    
+    .portfolio-item-inner {
       position: relative;
       overflow: hidden;
     }
-    .portfolio-item .mask{
+    
+    .portfolio-item .mask {
       opacity: 0;
       background: rgba(0, 0, 0, 0.9);
       position: absolute;
@@ -548,14 +557,16 @@
       width: 100%;
       transition: 0.3s;
     }
-    .portfolio-item-inner:hover .mask{
+    
+    .portfolio-item-inner:hover .mask {
       opacity: 0.9;
     }
-    .portfolio-item .term{
+    
+    .portfolio-item .term {
       color: white;
       background: var(--color-primary);
-      border-bottom-left-radius:0.98rem;
-      border-bottom-right-radius:0.98rem;
+      border-bottom-left-radius: 0.98rem;
+      border-bottom-right-radius: 0.98rem;
       position: absolute;
       top: 0;
       left: var(--m-1-5);
@@ -565,7 +576,8 @@
       transition: 0.3s;
       transform: translateY(-40px);
     }
-    .portfolio-item h3{
+    
+    .portfolio-item h3 {
       color: white;
       font-size: 1.25rem;
       margin: 0 0 0.98rem;
@@ -573,10 +585,11 @@
       position: absolute;
       top: 3.75rem;
       transition: 0.3s;
-      transform:translateY(30px) ;
+      transform: translateY(30px);
       opacity: 0;
     }
-    .portfolio-item .more-button{
+    
+    .portfolio-item .more-button {
       color: white;
       position: absolute;
       bottom: var(--m-1-5);
@@ -592,11 +605,14 @@
       transition: 0.3s;
       text-align: center;
       opacity: 0;
-    } 
-    .portfolio-item-inner:hover h3, .portfolio-item-inner:hover span{
+    }
+    
+    .portfolio-item-inner:hover h3,
+    .portfolio-item-inner:hover span {
       opacity: 1;
       transform: translateY(0);
     }
+    
 
     /*========== Testimonial ==========*/
     .testimonial-wrapper{

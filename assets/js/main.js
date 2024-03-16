@@ -53,37 +53,35 @@ var swiper = new Swiper(".testimonial-wrapper", {
 
 /*=============== PORTFOLIO ITEM FILTER ===============*/
 const filterContainer = document.querySelector(".portfolio-filter-inner"),
-      filterBtns = filterContainer.children,
-      totalFilterBtns = filterBtns.length,
-      portfolioItems = document.querySelectorAll(".portfolio-item"),
-      totalPortfolioItems = portfolioItems.length;
+  filterBtns = filterContainer.children,
+  totalFilterBtns = filterBtns.length,
+  portfolioItems = document.querySelectorAll(".portfolio-item"),
+  totalPortfolioItems = portfolioItems.length;
 
-      for(let i=0; i<totalFilterBtns; i++){
+for (let i = 0; i < totalFilterBtns; i++) {
+  filterBtns[i].addEventListener('click', function () {
 
-        filterBtns[i].addEventListener('click', function(){
-          
-          filterContainer.querySelector(".active").classList.remove(".active");
-          this.classList.add(".active");  
-          
-          const filterValue = this.getAttribute("data-category");
-          for(let k=0; k<totalPortfolioItems; k++){
+    // Remove active class from all buttons
+    for (let j = 0; j < totalFilterBtns; j++) {
+      filterBtns[j].classList.remove("active");
+    }
 
-            if(filterValue === portfolioItems[k].getAttribute("data-category")){
-              portfolioItems[k].classList.remove("hide");
-              portfolioItems[k].classList.add("show");
-            }
-            if(filterValue === "all"){
-              portfolioItems[k].classList.remove("hide");
-              portfolioItems[k].classList.add("show");
-            }
-            else{
-              portfolioItems[k].classList.add("hide");
-              portfolioItems[k].classList.remove("show");
+    // Add active class to the clicked button
+    this.classList.add("active");
 
-            }
-          }
-        })
+    const filterValue = this.getAttribute("data-filter");
+
+    for (let k = 0; k < totalPortfolioItems; k++) {
+      if (filterValue === portfolioItems[k].getAttribute("data-category") || filterValue === "all") {
+        portfolioItems[k].classList.remove("portfolio-hide");
+        portfolioItems[k].classList.add("portfolio-show");
+      } else {
+        portfolioItems[k].classList.add("portfolio-hide");
+        portfolioItems[k].classList.remove("portfolio-show");
       }
+    }
+  })
+}
 
 
 /*=============== THEME/DISPLAY CUSTOMIZATION ===============*/
